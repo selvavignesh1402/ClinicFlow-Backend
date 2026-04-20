@@ -1,11 +1,11 @@
 package com.HospitalManagement.service;
 
-import com.HospitalManagement.requestdto.AuthenticationRequest;
-import com.HospitalManagement.responsedto.AuthenticationResponse;
-import com.HospitalManagement.requestdto.RegisterRequest;
 import com.HospitalManagement.entity.User;
 import com.HospitalManagement.enums.Roles;
 import com.HospitalManagement.repository.UserRepository;
+import com.HospitalManagement.requestdto.AuthenticationRequest;
+import com.HospitalManagement.requestdto.RegisterRequest;
+import com.HospitalManagement.responsedto.AuthenticationResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,15 +22,21 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
 
     public AuthenticationResponse register(RegisterRequest request) {
+        if (repository.existsByEmail(request.getEmail())) {
+            throw new RuntimeException("User already exists with email: " + request.getEmail());
+        }
+
+        Roles role = Roles.valueOf(request.getRole().toUpperCase());
         var user = User.builder()
                 .name(request.getName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .phone(request.getPhone())
-                .role(Roles.valueOf(request.getRole().toUpperCase()))
+                .role(role)
                 .status("ACTIVE")
                 .build();
         repository.save(user);
+
         return AuthenticationResponse.builder()
                 .message("User registered successfully")
                 .build();

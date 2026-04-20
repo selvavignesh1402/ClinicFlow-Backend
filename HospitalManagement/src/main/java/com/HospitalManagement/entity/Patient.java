@@ -98,7 +98,7 @@ public class Patient {
 
     private String primaryContact;
 
-    private Long insuranceId;
+    private String insuranceId;
 
     private String status;
 

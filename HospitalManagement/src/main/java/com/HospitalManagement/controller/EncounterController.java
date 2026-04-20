@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/encounters")
+@RequestMapping("/api/v1/clinician/encounters")
 public class EncounterController {
 
     private final EncounterService encounterService;
