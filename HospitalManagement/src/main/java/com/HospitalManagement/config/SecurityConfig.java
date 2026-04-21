@@ -45,6 +45,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/patient/**").hasAnyAuthority("RECEPTION", "CLINICIAN", "ADMIN", "CLINIC_MANAGER")
                         .requestMatchers("/api/v1/reception/**").hasAuthority("RECEPTION")
                         .requestMatchers("/api/v1/clinician/**").hasAuthority("CLINICIAN")
+                        .requestMatchers("/api/v1/prescriptions/**").hasAnyAuthority("CLINICIAN", "ADMIN", "PATIENT")
                         .requestMatchers("/api/v1/pharmacist/**").hasAuthority("PHARMACY")
                         .requestMatchers("/api/v1/lab/**").hasAuthority("LAB_TECHNICIAN")
                         .requestMatchers("/api/v1/finance/**").hasAuthority("FINANCE_OFFICER")

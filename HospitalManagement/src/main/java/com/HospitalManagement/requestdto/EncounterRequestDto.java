@@ -14,7 +14,7 @@ public record EncounterRequestDto(
         String diagnosesJson,
         String ordersJson,
         String prescriptionsJson,
-        @NotNull LocalDateTime startAt,
+        LocalDateTime startAt,
         LocalDateTime endAt,
         @NotBlank String status,
         Long signedById,

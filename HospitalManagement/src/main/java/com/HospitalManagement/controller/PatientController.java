@@ -1,6 +1,7 @@
 package com.HospitalManagement.controller;
 
 import com.HospitalManagement.entity.Patient;
+import com.HospitalManagement.responsedto.PatientResponseDto;
 import com.HospitalManagement.service.PatientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,25 +19,25 @@ public class PatientController {
 
     @GetMapping
     @PreAuthorize("hasAnyAuthority('RECEPTION', 'CLINICIAN', 'ADMIN', 'CLINIC_MANAGER')")
-    public ResponseEntity<List<Patient>> getAllPatients() {
+    public ResponseEntity<List<PatientResponseDto>> getAllPatients() {
         return ResponseEntity.ok(patientService.getAllPatients());
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('RECEPTION', 'CLINICIAN', 'ADMIN', 'CLINIC_MANAGER')")
-    public ResponseEntity<Patient> getPatientById(@PathVariable Long id) {
+    public ResponseEntity<PatientResponseDto> getPatientById(@PathVariable Long id) {
         return ResponseEntity.ok(patientService.getPatientById(id));
     }
 
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('RECEPTION', 'ADMIN')")
-    public ResponseEntity<Patient> registerPatient(@RequestBody Patient patient) {
+    @PreAuthorize("hasAnyAuthority('RECEPTION', 'ADMIN', 'CLINICIAN')")
+    public ResponseEntity<PatientResponseDto> registerPatient(@RequestBody Patient patient) {
         return ResponseEntity.ok(patientService.registerPatient(patient));
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('RECEPTION', 'ADMIN')")
-    public ResponseEntity<Patient> updatePatient(@PathVariable Long id, @RequestBody Patient patient) {
+    public ResponseEntity<PatientResponseDto> updatePatient(@PathVariable Long id, @RequestBody Patient patient) {
         return ResponseEntity.ok(patientService.updatePatient(id, patient));
     }
 }

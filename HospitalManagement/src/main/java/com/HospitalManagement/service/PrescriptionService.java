@@ -130,7 +130,7 @@ public class PrescriptionService {
                 prescription.getRxId(),
                 prescription.getEncounter().getEncounterId(),
                 prescription.getPatient().getPatientId(),
-                prescription.getPatient().getName(),
+                prescription.getPatient().getUser().getName(),
                 prescription.getClinician().getUserId(),
                 prescription.getClinician().getName(),
                 prescription.getMedication().getMedId(),

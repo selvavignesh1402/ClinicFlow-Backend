@@ -60,6 +60,7 @@ package com.HospitalManagement.entity;
 
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -82,10 +83,11 @@ public class Patient {
     @Column(unique = true, nullable = false)
     private String mrn;
 
-    @Column(nullable = false)
-    private String name;
+    // @Column(nullable = false)
+    // private String name;
 
     private LocalDate dob;
+
     private String gender;
 
     @JdbcTypeCode(SqlTypes.JSON)
@@ -104,8 +106,13 @@ public class Patient {
 
     private LocalDateTime createdAt;
 
+    @OneToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+
 }

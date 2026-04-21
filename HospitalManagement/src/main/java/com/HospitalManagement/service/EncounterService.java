@@ -8,6 +8,8 @@ import com.HospitalManagement.repository.PatientRepository;
 import com.HospitalManagement.repository.UserRepository;
 import com.HospitalManagement.requestdto.EncounterRequestDto;
 import com.HospitalManagement.responsedto.EncounterResponseDto;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -72,11 +74,21 @@ public class EncounterService {
         encounter.setDiagnosesJson(requestDto.diagnosesJson());
         encounter.setOrdersJson(requestDto.ordersJson());
         encounter.setPrescriptionsJson(requestDto.prescriptionsJson());
-        encounter.setStartAt(requestDto.startAt());
-        encounter.setEndAt(requestDto.endAt());
+        encounter.setStartAt(
+            requestDto.startAt() != null
+            ? requestDto.startAt()
+            : java.time.LocalDateTime.now()
+            );
+        if ("COMPLETED".equalsIgnoreCase(requestDto.status()) && encounter.getEndAt() == null) {
+            encounter.setEndAt(LocalDateTime.now());
+            }
         encounter.setStatus(requestDto.status());
         encounter.setSignedBy(requestDto.signedById() != null ? findUser(requestDto.signedById()) : null);
-        encounter.setSignedAt(requestDto.signedAt());
+        encounter.setSignedAt(
+            requestDto.signedAt() != null
+            ? requestDto.signedAt()
+            : (requestDto.signedById() != null ? java.time.LocalDateTime.now() : null)
+            );
     }
 
     private Encounter findEncounter(Long encounterId) {
@@ -102,7 +114,7 @@ public class EncounterService {
         return new EncounterResponseDto(
                 encounter.getEncounterId(),
                 encounter.getPatient().getPatientId(),
-                encounter.getPatient().getName(),
+                encounter.getPatient().getUser().getName(),
                 encounter.getClinician().getUserId(),
                 encounter.getClinician().getName(),
                 encounter.getVisitType(),
