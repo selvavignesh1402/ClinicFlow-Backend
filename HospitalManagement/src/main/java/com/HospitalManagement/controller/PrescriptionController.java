@@ -28,7 +28,7 @@ public class PrescriptionController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAnyAuthority('CLINICIAN','PATIENT')") 
+    @PreAuthorize("hasAuthority('CLINICIAN')") 
     public List<PrescriptionResponseDto> getAllPrescriptions() {
         return prescriptionService.getAllPrescriptions();
     }

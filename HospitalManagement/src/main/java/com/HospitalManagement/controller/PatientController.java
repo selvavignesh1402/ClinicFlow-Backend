@@ -1,6 +1,7 @@
 package com.HospitalManagement.controller;
 
 import com.HospitalManagement.entity.Patient;
+import com.HospitalManagement.requestdto.PatientRequestDto;
 import com.HospitalManagement.responsedto.PatientResponseDto;
 import com.HospitalManagement.service.PatientService;
 import lombok.RequiredArgsConstructor;
@@ -30,14 +31,14 @@ public class PatientController {
     }
 
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('RECEPTION', 'ADMIN', 'CLINICIAN')")
-    public ResponseEntity<PatientResponseDto> registerPatient(@RequestBody Patient patient) {
+    @PreAuthorize("hasAnyAuthority('RECEPTION', 'ADMIN')")
+    public ResponseEntity<PatientResponseDto> registerPatient(@RequestBody PatientRequestDto patient) {
         return ResponseEntity.ok(patientService.registerPatient(patient));
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('RECEPTION', 'ADMIN')")
-    public ResponseEntity<PatientResponseDto> updatePatient(@PathVariable Long id, @RequestBody Patient patient) {
+    public ResponseEntity<PatientResponseDto> updatePatient(@PathVariable Long id, @RequestBody PatientRequestDto patient) {
         return ResponseEntity.ok(patientService.updatePatient(id, patient));
     }
 }
