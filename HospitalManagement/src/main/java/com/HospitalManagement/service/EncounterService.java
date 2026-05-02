@@ -114,7 +114,7 @@ public class EncounterService {
         return new EncounterResponseDto(
                 encounter.getEncounterId(),
                 encounter.getPatient().getPatientId(),
-                encounter.getPatient().getUser().getName(),
+                encounter.getPatient().getName(),
                 encounter.getClinician().getUserId(),
                 encounter.getClinician().getName(),
                 encounter.getVisitType(),

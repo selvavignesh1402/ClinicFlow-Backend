@@ -1,6 +1,5 @@
 package com.HospitalManagement.controller;
 
-import com.HospitalManagement.entity.Patient;
 import com.HospitalManagement.requestdto.PatientRequestDto;
 import com.HospitalManagement.responsedto.PatientResponseDto;
 import com.HospitalManagement.service.PatientService;

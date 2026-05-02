@@ -1,9 +1,7 @@
 package com.HospitalManagement.service;
 
 import com.HospitalManagement.entity.Patient;
-import com.HospitalManagement.entity.User;
 import com.HospitalManagement.repository.PatientRepository;
-import com.HospitalManagement.repository.UserRepository;
 import com.HospitalManagement.requestdto.PatientRequestDto;
 import com.HospitalManagement.responsedto.PatientResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class PatientService {
 
     private final PatientRepository patientRepository;
-    private final UserRepository userRepository;
 
     public List<PatientResponseDto> getAllPatients() {
         return patientRepository.findAll()
@@ -52,6 +49,7 @@ public class PatientService {
             patient.setMrn(request.mrn());
         }
 
+        patient.setName(request.name());
         patient.setDob(request.dob());
         patient.setGender(request.gender());
         patient.setContactInfoJson(request.contactInfoJson());
@@ -60,12 +58,6 @@ public class PatientService {
         patient.setInsuranceId(request.insuranceId());
         patient.setStatus("ACTIVE");
         patient.setCreatedAt(LocalDateTime.now());
-
-        if (request.userId() != null) {
-            User user = userRepository.findById(request.userId())
-                    .orElseThrow(() -> new RuntimeException("User not found"));
-            patient.setUser(user);
-        }
 
         Patient saved = patientRepository.save(patient);
         return mapToDto(saved);
@@ -78,6 +70,7 @@ public class PatientService {
                 .orElseThrow(() ->
                         new RuntimeException("Patient not found with ID: " + id));
 
+        existing.setName(request.name());
         existing.setDob(request.dob());
         existing.setGender(request.gender());
         existing.setContactInfoJson(request.contactInfoJson());
@@ -85,12 +78,6 @@ public class PatientService {
         existing.setPrimaryContact(request.primaryContact());
         existing.setInsuranceId(request.insuranceId());
         existing.setStatus(request.status());
-
-        if (request.userId() != null) {
-            User user = userRepository.findById(request.userId())
-                    .orElseThrow(() -> new RuntimeException("User not found"));
-            existing.setUser(user);
-        }
 
         Patient saved = patientRepository.save(existing);
         return mapToDto(saved);
@@ -106,13 +93,10 @@ public class PatientService {
     }
 
     private PatientResponseDto mapToDto(Patient patient) {
-
-        User user = patient.getUser();
-
         return new PatientResponseDto(
                 patient.getPatientId(),
                 patient.getMrn(),
-                user != null ? user.getName() : null,
+                patient.getName(),
                 patient.getPrimaryContact(),
                 patient.getDob(),
                 patient.getGender(),
