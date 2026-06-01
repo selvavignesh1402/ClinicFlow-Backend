@@ -1,0 +1,6 @@
+2026-05-12 08:46:12.212 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-05-12 08:46:22.981 [http-nio-8081-exec-1] INFO  c.H.service.AuthService - Attempting authentication for user with email: Selva@clinicflow.com
+2026-05-12 08:46:23.989 [http-nio-8081-exec-1] INFO  c.H.service.AuthService - User authenticated successfully - Email: Selva@clinicflow.com, Role: CLINICIAN
+2026-05-12 08:56:06.887 [http-nio-8081-exec-5] INFO  c.H.service.AuthService - Attempting authentication for user with email: admin@clinicflow.com
+2026-05-12 08:56:07.353 [http-nio-8081-exec-5] INFO  c.H.service.AuthService - User authenticated successfully - Email: admin@clinicflow.com, Role: ADMIN
+2026-05-12 23:33:28.876 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
