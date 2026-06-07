@@ -15,7 +15,6 @@ public record EncounterResponseDto(
         String notesJson,
         String diagnosesJson,
         String ordersJson,
-        String prescriptionsJson,
         LocalDateTime startAt,
         LocalDateTime endAt,
         EncounterStatus status,

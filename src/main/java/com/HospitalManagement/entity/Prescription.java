@@ -41,7 +41,7 @@ public class Prescription {
     private String notes;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private PrescriptionStatus status;
 
     private LocalDateTime issuedAt;

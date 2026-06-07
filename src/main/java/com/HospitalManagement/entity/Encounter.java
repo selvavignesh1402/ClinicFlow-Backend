@@ -45,10 +45,6 @@ public class Encounter {
     @Column(columnDefinition = "json")
     private String ordersJson;
 
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(columnDefinition = "json")
-    private String prescriptionsJson;
-
     private LocalDateTime startAt;
 
     private LocalDateTime endAt;

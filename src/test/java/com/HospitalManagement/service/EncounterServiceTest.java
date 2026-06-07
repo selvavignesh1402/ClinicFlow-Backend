@@ -8,6 +8,7 @@ import com.HospitalManagement.enums.Roles;
 import com.HospitalManagement.repository.EncounterRepository;
 import com.HospitalManagement.repository.PatientRepository;
 import com.HospitalManagement.repository.UserRepository;
+import com.HospitalManagement.repository.PrescriptionRepository;
 import com.HospitalManagement.requestdto.EncounterRequestDto;
 import com.HospitalManagement.responsedto.EncounterResponseDto;
 import org.junit.jupiter.api.BeforeEach;
@@ -43,6 +44,9 @@ class EncounterServiceTest {
 
     @Mock
     private UserRepository userRepository;
+
+    @Mock
+    private PrescriptionRepository prescriptionRepository;
 
     @InjectMocks
     private EncounterService encounterService;
@@ -81,7 +85,6 @@ class EncounterServiceTest {
         encounter.setNotesJson("{\"notes\": \"Patient seems fine\"}");
         encounter.setDiagnosesJson("{\"diagnosis\": \"Common Cold\"}");
         encounter.setOrdersJson("{\"orders\": []}");
-        encounter.setPrescriptionsJson("{\"prescriptions\": []}");
         encounter.setStartAt(now);
         encounter.setStatus(EncounterStatus.IN_PROGRESS);
 
@@ -93,7 +96,6 @@ class EncounterServiceTest {
                 "{\"notes\": \"Patient seems fine\"}",
                 "{\"diagnosis\": \"Common Cold\"}",
                 "{\"orders\": []}",
-                "{\"prescriptions\": []}",
                 EncounterStatus.IN_PROGRESS
         );
 
@@ -216,7 +218,7 @@ class EncounterServiceTest {
         existingEncounter.setStatus(EncounterStatus.IN_PROGRESS);
 
         EncounterRequestDto updateDto = new EncounterRequestDto(
-                1L, "Follow-up Visit", "Recovery check", "{}", "{}", "{}", "{}", "{}", EncounterStatus.IN_PROGRESS
+                1L, "Follow-up Visit", "Recovery check", "{}", "{}", "{}", "{}", EncounterStatus.IN_PROGRESS
         );
 
         when(encounterRepository.findById(1L)).thenReturn(Optional.of(existingEncounter));
@@ -260,7 +262,7 @@ class EncounterServiceTest {
         inProgressEncounter.setStartAt(now);
 
         EncounterRequestDto completeDto = new EncounterRequestDto(
-                1L, "Routine", "Complaint", "{}", "{}", "{}", "{}", "{}", EncounterStatus.COMPLETED
+                1L, "Routine", "Complaint", "{}", "{}", "{}", "{}", EncounterStatus.COMPLETED
         );
 
         when(encounterRepository.findById(1L)).thenReturn(Optional.of(inProgressEncounter));

@@ -19,9 +19,9 @@ INSERT INTO appointments (appt_id, patient_id, clinician_id, department, service
 (1, 1, 1, 'General Medicine', 'Consultation', '2026-04-10 09:00:00', '2026-04-10 09:30:00', 'COMPLETED', 2, '2026-04-09 16:00:00'),
 (2, 2, 1, 'General Medicine', 'Follow Up', '2026-04-11 11:00:00', '2026-04-11 11:30:00', 'COMPLETED', 2, '2026-04-10 17:00:00');
 
-INSERT INTO encounters (encounter_id, patient_id, clinician_id, visit_type, chief_complaint, vitals_json, notes_json, diagnoses_json, orders_json, prescriptions_json, start_at, end_at, status, signed_by, signed_at) VALUES
-(1, 1, 1, 'OPD', 'Fever and body pain', '{"temp":"101F","bp":"110/70","pulse":"92"}', '{"soap":"Patient reports fever for 2 days"}', '{"primary":"Viral fever"}', '{"lab":["CBC"]}', '{"planned":["Paracetamol"]}', '2026-04-10 09:00:00', '2026-04-10 09:20:00', 'COMPLETED', 1, '2026-04-10 09:25:00'),
-(2, 2, 1, 'FOLLOW_UP', 'Cough and sore throat', '{"temp":"99F","bp":"120/80","pulse":"88"}', '{"soap":"Dry cough for 5 days"}', '{"primary":"Upper respiratory infection"}', '{"lab":["XRay Chest"]}', '{"planned":["Amoxicillin"]}', '2026-04-11 11:00:00', '2026-04-11 11:25:00', 'COMPLETED', 1, '2026-04-11 11:30:00');
+INSERT INTO encounters (encounter_id, patient_id, clinician_id, visit_type, chief_complaint, vitals_json, notes_json, diagnoses_json, orders_json, start_at, end_at, status, signed_by, signed_at) VALUES
+(1, 1, 1, 'OPD', 'Fever and body pain', '{"temp":"101F","bp":"110/70","pulse":"92"}', '{"soap":"Patient reports fever for 2 days"}', '{"primary":"Viral fever"}', '{"lab":["CBC"]}', '2026-04-10 09:00:00', '2026-04-10 09:20:00', 'COMPLETED', 1, '2026-04-10 09:25:00'),
+(2, 2, 1, 'FOLLOW_UP', 'Cough and sore throat', '{"temp":"99F","bp":"120/80","pulse":"88"}', '{"soap":"Dry cough for 5 days"}', '{"primary":"Upper respiratory infection"}', '{"lab":["XRay Chest"]}', '2026-04-11 11:00:00', '2026-04-11 11:25:00', 'COMPLETED', 1, '2026-04-11 11:30:00');
 
 INSERT INTO prescriptions (rx_id, encounter_id, patient_id, clinician_id, med_id, dosage, frequency, duration_days, quantity, repeats, route, notes, status, issued_at) VALUES
 (1, 1, 1, 1, 1, '1 tablet', 'TID', 5, 15, 0, 'ORAL', 'After food', 'ISSUED', '2026-04-10 09:15:00'),

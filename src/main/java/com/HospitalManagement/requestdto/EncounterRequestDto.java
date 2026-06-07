@@ -28,7 +28,6 @@ public record EncounterRequestDto(
         @NotBlank
         String ordersJson,
 
-        String prescriptionsJson,
         EncounterStatus status
 ) {
 }

@@ -81,7 +81,6 @@ public class EncounterService {
         encounter.setNotesJson(requestDto.notesJson());
         encounter.setDiagnosesJson(requestDto.diagnosesJson());
         encounter.setOrdersJson(requestDto.ordersJson());
-        encounter.setPrescriptionsJson(requestDto.prescriptionsJson());
         encounter.setStartAt( LocalDateTime.now());
         encounter.setStatus(EncounterStatus.IN_PROGRESS);
 
@@ -110,7 +109,6 @@ public class EncounterService {
         encounter.setNotesJson(requestDto.notesJson());
         encounter.setDiagnosesJson(requestDto.diagnosesJson());
         encounter.setOrdersJson(requestDto.ordersJson());
-        encounter.setPrescriptionsJson(requestDto.prescriptionsJson());
 
         if (requestDto.status() == EncounterStatus.COMPLETED) {
             encounter.setStatus(EncounterStatus.COMPLETED);
@@ -203,7 +201,6 @@ public class EncounterService {
                 encounter.getNotesJson(),
                 encounter.getDiagnosesJson(),
                 encounter.getOrdersJson(),
-                encounter.getPrescriptionsJson(),
                 encounter.getStartAt(),
                 encounter.getEndAt(),
                 encounter.getStatus(),
