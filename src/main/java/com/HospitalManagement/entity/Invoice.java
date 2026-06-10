@@ -36,5 +36,7 @@ public class Invoice {
 
     private LocalDateTime issuedAt;
     private LocalDateTime dueDate;
+
+    @Enumerated(EnumType.STRING)
     private InvoiceStatus status;
 }

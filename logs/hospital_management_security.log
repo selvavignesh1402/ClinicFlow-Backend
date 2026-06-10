@@ -1,54 +1,34 @@
-2026-06-07 20:57:45.455 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 20:58:08.482 [http-nio-8081-exec-2] INFO  c.H.service.AuthService - Attempting authentication for user with email: admin@clinicflo.com
-2026-06-07 20:58:09.290 [http-nio-8081-exec-2] WARN  c.H.service.AuthService - Authentication failed: Invalid credentials for email: admin@clinicflo.com
-2026-06-07 20:58:13.955 [http-nio-8081-exec-4] INFO  c.H.service.AuthService - Attempting authentication for user with email: admin@clinicflow.com
-2026-06-07 20:58:14.326 [http-nio-8081-exec-4] INFO  c.H.service.AuthService - User authenticated successfully - Email: admin@clinicflow.com, Role: ADMIN
-2026-06-07 21:21:12.228 [http-nio-8081-exec-5] INFO  c.H.service.AuthService - Attempting authentication for user with email: admin@clinicflow.com
-2026-06-07 21:21:12.478 [http-nio-8081-exec-5] INFO  c.H.service.AuthService - User authenticated successfully - Email: admin@clinicflow.com, Role: ADMIN
-2026-06-07 21:24:58.132 [http-nio-8081-exec-6] INFO  c.H.service.AuthService - Attempting authentication for user with email: Preetha@clinicflow.com
-2026-06-07 21:24:58.208 [http-nio-8081-exec-6] INFO  c.H.service.AuthService - User authenticated successfully - Email: Preetha@clinicflow.com, Role: CLINICIAN
-2026-06-07 21:33:30.967 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 21:33:49.770 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 21:33:53.426 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 21:35:26.085 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 21:35:46.604 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 21:36:33.641 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 21:36:40.862 [main] INFO  c.H.service.AuthService - Attempting authentication for user with email: john.doe@example.com
-2026-06-07 21:36:40.868 [main] INFO  c.H.service.AuthService - User authenticated successfully - Email: john.doe@example.com, Role: PATIENT
-2026-06-07 21:36:40.885 [main] INFO  c.H.service.AuthService - Attempting to register new user with email: john.doe@example.com
-2026-06-07 21:36:40.887 [main] WARN  c.H.service.AuthService - Registration failed: User already exists with email: john.doe@example.com
-2026-06-07 21:36:40.960 [main] INFO  c.H.service.AuthService - Attempting authentication for user with email: john.doe@example.com
-2026-06-07 21:36:40.963 [main] WARN  c.H.service.AuthService - Authentication failed: Invalid credentials for email: john.doe@example.com
-2026-06-07 21:36:41.032 [main] INFO  c.H.service.AuthService - Attempting to register new user with email: john.doe@example.com
-2026-06-07 21:36:41.033 [main] INFO  c.H.service.AuthService - User registered successfully - Name: John Doe, Email: john.doe@example.com, Phone: 1234567890, Role: PATIENT
-2026-06-07 21:39:58.740 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 21:41:20.075 [main] INFO  c.H.service.AuthService - Attempting authentication for user with email: john.doe@example.com
-2026-06-07 21:41:20.081 [main] INFO  c.H.service.AuthService - User authenticated successfully - Email: john.doe@example.com, Role: PATIENT
-2026-06-07 21:41:20.096 [main] INFO  c.H.service.AuthService - Attempting to register new user with email: john.doe@example.com
-2026-06-07 21:41:20.097 [main] WARN  c.H.service.AuthService - Registration failed: User already exists with email: john.doe@example.com
-2026-06-07 21:41:20.112 [main] INFO  c.H.service.AuthService - Attempting authentication for user with email: john.doe@example.com
-2026-06-07 21:41:20.113 [main] WARN  c.H.service.AuthService - Authentication failed: Invalid credentials for email: john.doe@example.com
-2026-06-07 21:41:20.125 [main] INFO  c.H.service.AuthService - Attempting to register new user with email: john.doe@example.com
-2026-06-07 21:41:20.126 [main] INFO  c.H.service.AuthService - User registered successfully - Name: John Doe, Email: john.doe@example.com, Phone: 1234567890, Role: PATIENT
-2026-06-07 21:42:13.378 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:19:26.867 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:19:32.195 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:19:38.960 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:19:47.108 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:19:54.687 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:19:59.677 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:20:07.079 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:20:13.647 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:20:21.401 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:21:14.665 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:21:22.570 [main] INFO  c.H.service.AuthService - Attempting authentication for user with email: john.doe@example.com
-2026-06-07 22:21:22.576 [main] INFO  c.H.service.AuthService - User authenticated successfully - Email: john.doe@example.com, Role: PATIENT
-2026-06-07 22:21:22.592 [main] INFO  c.H.service.AuthService - Attempting to register new user with email: john.doe@example.com
-2026-06-07 22:21:22.593 [main] WARN  c.H.service.AuthService - Registration failed: User already exists with email: john.doe@example.com
-2026-06-07 22:21:22.607 [main] INFO  c.H.service.AuthService - Attempting authentication for user with email: john.doe@example.com
-2026-06-07 22:21:22.610 [main] WARN  c.H.service.AuthService - Authentication failed: Invalid credentials for email: john.doe@example.com
-2026-06-07 22:21:22.623 [main] INFO  c.H.service.AuthService - Attempting to register new user with email: john.doe@example.com
-2026-06-07 22:21:22.625 [main] INFO  c.H.service.AuthService - User registered successfully - Name: John Doe, Email: john.doe@example.com, Phone: 1234567890, Role: PATIENT
-2026-06-07 22:25:23.249 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:42:09.891 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
-2026-06-07 22:45:41.519 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 21:32:36.128 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 21:32:44.939 [http-nio-8081-exec-2] INFO  c.H.service.AuthService - Attempting authentication for user with email: admin@clinicflow.com
+2026-06-10 21:32:46.132 [http-nio-8081-exec-2] INFO  c.H.service.AuthService - User authenticated successfully - Email: admin@clinicflow.com, Role: ADMIN
+2026-06-10 21:46:20.143 [http-nio-8081-exec-8] INFO  c.H.service.AuthService - Attempting authentication for user with email: Preetha@clinicflow.com
+2026-06-10 21:46:20.232 [http-nio-8081-exec-8] INFO  c.H.service.AuthService - User authenticated successfully - Email: Preetha@clinicflow.com, Role: CLINICIAN
+2026-06-10 21:52:43.145 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:01:29.545 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:02:23.427 [http-nio-8081-exec-1] INFO  c.H.service.AuthService - Attempting authentication for user with email: asha.mehta@clinicflow.com
+2026-06-10 22:02:24.245 [http-nio-8081-exec-1] WARN  c.H.service.AuthService - Authentication failed: Invalid credentials for email: asha.mehta@clinicflow.com
+2026-06-10 22:03:10.724 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:03:42.781 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:04:21.297 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:05:13.701 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:07:08.122 [http-nio-8081-exec-1] INFO  c.H.service.AuthService - Attempting authentication for user with email: asha.mehta@clinicflow.com
+2026-06-10 22:07:08.893 [http-nio-8081-exec-1] WARN  c.H.service.AuthService - Authentication failed: Invalid credentials for email: asha.mehta@clinicflow.com
+2026-06-10 22:07:30.618 [http-nio-8081-exec-3] INFO  c.H.service.AuthService - Attempting to register new user with email: test@patient.com
+2026-06-10 22:07:30.832 [http-nio-8081-exec-3] INFO  c.H.service.AuthService - User registered successfully - Name: Test Patient, Email: test@patient.com, Phone: 9999988888, Role: PATIENT
+2026-06-10 22:07:43.492 [http-nio-8081-exec-5] INFO  c.H.service.AuthService - Attempting authentication for user with email: test@patient.com
+2026-06-10 22:07:43.652 [http-nio-8081-exec-5] INFO  c.H.service.AuthService - User authenticated successfully - Email: test@patient.com, Role: PATIENT
+2026-06-10 22:08:00.752 [http-nio-8081-exec-10] INFO  c.H.service.AuthService - Attempting authentication for user with email: asha.mehta@clinicflow.com
+2026-06-10 22:08:00.832 [http-nio-8081-exec-10] WARN  c.H.service.AuthService - Authentication failed: Invalid credentials for email: asha.mehta@clinicflow.com
+2026-06-10 22:08:56.460 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:10:10.625 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:11:08.030 [http-nio-8081-exec-1] INFO  c.H.service.AuthService - Attempting authentication for user with email: asha.mehta@clinicflow.com
+2026-06-10 22:11:08.960 [http-nio-8081-exec-1] INFO  c.H.service.AuthService - User authenticated successfully - Email: asha.mehta@clinicflow.com, Role: CLINICIAN
+2026-06-10 22:11:19.417 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:11:35.945 [http-nio-8081-exec-1] INFO  c.H.service.AuthService - Attempting authentication for user with email: asha.mehta@clinicflow.com
+2026-06-10 22:11:36.132 [http-nio-8081-exec-1] INFO  c.H.service.AuthService - User authenticated successfully - Email: asha.mehta@clinicflow.com, Role: CLINICIAN
+2026-06-10 22:13:03.545 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:13:47.738 [restartedMain] DEBUG c.H.config.AuthenticationFilter - Filter 'authenticationFilter' configured for use
+2026-06-10 22:17:31.611 [http-nio-8081-exec-6] INFO  c.H.service.AuthService - Attempting authentication for user with email: rahul.sharma@clinicflow.com
+2026-06-10 22:17:31.824 [http-nio-8081-exec-6] INFO  c.H.service.AuthService - User authenticated successfully - Email: rahul.sharma@clinicflow.com, Role: ADMIN
+2026-06-10 22:20:45.078 [http-nio-8081-exec-7] INFO  c.H.service.AuthService - Attempting authentication for user with email: asha.mehta@clinicflow.com
+2026-06-10 22:20:45.155 [http-nio-8081-exec-7] INFO  c.H.service.AuthService - User authenticated successfully - Email: asha.mehta@clinicflow.com, Role: CLINICIAN

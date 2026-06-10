@@ -1,7 +1,6 @@
 package com.HospitalManagement.entity;
 
 import com.HospitalManagement.enums.InventoryStatus;
-import com.HospitalManagement.enums.InvoiceStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
