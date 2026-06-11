@@ -2,6 +2,7 @@ package com.HospitalManagement.controller;
 
 import com.HospitalManagement.requestdto.AppointmentRequestDto;
 import com.HospitalManagement.responsedto.AppointmentResponseDto;
+import com.HospitalManagement.responsedto.UserResponseDto;
 import com.HospitalManagement.service.AppointmentService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -24,6 +25,12 @@ public class AppointmentController {
     @PreAuthorize("hasAnyAuthority('RECEPTION', 'CLINICIAN', 'ADMIN', 'CLINIC_MANAGER')")
     public List<AppointmentResponseDto> getAllAppointments() {
         return appointmentService.getAllAppointments();
+    }
+
+    @GetMapping("/clinicians")
+    @PreAuthorize("hasAnyAuthority('RECEPTION', 'CLINICIAN', 'ADMIN', 'CLINIC_MANAGER', 'PATIENT')")
+    public List<UserResponseDto> getClinicians() {
+        return appointmentService.getClinicians();
     }
 
     @GetMapping("/{id}")

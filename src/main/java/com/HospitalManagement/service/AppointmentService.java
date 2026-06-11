@@ -9,6 +9,7 @@ import com.HospitalManagement.repository.PatientRepository;
 import com.HospitalManagement.repository.UserRepository;
 import com.HospitalManagement.requestdto.AppointmentRequestDto;
 import com.HospitalManagement.responsedto.AppointmentResponseDto;
+import com.HospitalManagement.responsedto.UserResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,6 +69,23 @@ public class AppointmentService {
         return appointmentRepository.findByClinicianUserIdAndStartAtBetweenOrderByStartAtAsc(clinicianId, from, to)
                 .stream()
                 .map(this::toResponseDto)
+                .toList();
+    }
+
+    public List<UserResponseDto> getClinicians() {
+        logger.debug("Fetching all active clinicians");
+        return userRepository.findAll().stream()
+                .filter(u -> u.getRole() == com.HospitalManagement.enums.Roles.CLINICIAN && "ACTIVE".equalsIgnoreCase(u.getStatus()))
+                .map(u -> new UserResponseDto(
+                        u.getUserId(),
+                        u.getName(),
+                        u.getEmail(),
+                        u.getPhone(),
+                        u.getRole() != null ? u.getRole().name() : null,
+                        u.getStatus(),
+                        u.getCreatedAt(),
+                        u.getUpdatedAt()
+                ))
                 .toList();
     }
 
